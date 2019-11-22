@@ -8,19 +8,20 @@
 
 import React from 'react';
 import {
-  SafeAreaView,
   StyleSheet,
-  ScrollView,
   View,
   Text,
-  StatusBar,
+  TouchableHighlight
 } from 'react-native';
 
 import { Header, Icon } from 'react-native-elements';
-import CardList from './src/components/CardList';
+import Feed from './src/components/Feed';
 import TimeTicker from './src/components/TimeTicker'
 
+const feed = React.createRef();
+
 const App: () => React$Node = () => {
+  
   return (
     <>
       <Header
@@ -46,44 +47,24 @@ const App: () => React$Node = () => {
             />
         }
       />
-      <CardList
-        style={styles.feed}
-        items={
-          ([
-            'Teddy Chen [@tedthemeap]',
-            'Ngozi Ozor [@ngozi4ever]',
-            'Janielle Hay [@hay.its.janielle]',
-            'Alex Sikorsky [@6sik_Alex]',
-            'Cahil Potnis [@houseonacahil]',
-            'Jaron Lanier [@realJaronLanier]',
-            'Jia Tolentino [@jia.tolentino7]',
-            'Jenny Odell [@odelllll]',
-            'Hannah Markley [@dr.markley2u]',
-            'Marshall McLuhan [@message_man_mcluhan]',
-            'Neil Postman [@neil.keep.me.posted.ma]n'
-          ]).map((handle, id) => { 
-            return (
-              {
-                id,
-                handle
-              }
-            );
-          })
-        }
-      />
+      <Feed ref={feed}/>
       <View style={styles.footer}>
-        <Icon 
-          name='home' 
-          type='font-awesome'
-          size={40}
-          color='#656b69'
-        />
-        <Icon 
-          name='search' 
-          type='font-awesome'
-          size={40}
-          color='#656b69'
-        />
+        <TouchableHighlight onPress={switchFeed} underlayColor='#eee'>
+          <Icon 
+            name='home' 
+            type='font-awesome'
+            size={40}
+            color='#656b69'
+          />
+        </TouchableHighlight>
+        <TouchableHighlight onPress={switchFeed} underlayColor='#eee'>
+          <Icon 
+            name='search' 
+            type='font-awesome'
+            size={40}
+            color='#656b69'
+          />
+        </TouchableHighlight>
         <Icon
           name='plus-circle' 
           type='font-awesome'
@@ -106,6 +87,10 @@ const App: () => React$Node = () => {
     </>
   );
 };
+
+switchFeed = () => {
+  feed.current.switchFeed();
+}
 
 const styles = StyleSheet.create({
   header: {
