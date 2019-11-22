@@ -50,17 +50,17 @@ const App: () => React$Node = () => {
         style={styles.feed}
         items={
           ([
-            'tedthemeap',
-            'ngozi4ever',
-            'hay.its.janielle',
-            'sik_Alex',
-            'houseonacahil',
-            'realJaronLanier',
-            'jia.tolentino',
-            'odelllll',
-            'dr.markley2u',
-            'message_man_mcluhan',
-            'neil.keep.me.posted.man'
+            'Teddy Chen [@tedthemeap]',
+            'Ngozi Ozor [@ngozi4ever]',
+            'Janielle Hay [@hay.its.janielle]',
+            'Alex Sikorsky [@6sik_Alex]',
+            'Cahil Potnis [@houseonacahil]',
+            'Jaron Lanier [@realJaronLanier]',
+            'Jia Tolentino [@jia.tolentino7]',
+            'Jenny Odell [@odelllll]',
+            'Hannah Markley [@dr.markley2u]',
+            'Marshall McLuhan [@message_man_mcluhan]',
+            'Neil Postman [@neil.keep.me.posted.ma]n'
           ]).map((handle, id) => { 
             return (
               {

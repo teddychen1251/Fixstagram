@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import AuthorRow from './AuthorRow';
+import Like from './Like';
 
 export default class Card extends React.Component {
     static propTypes = {
@@ -35,6 +36,7 @@ export default class Card extends React.Component {
                         onLoad={this.handleLoad}
                     />
                 </View>
+                <Like />
             </View>
         );
     }
