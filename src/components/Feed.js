@@ -32,7 +32,7 @@ export default class Feed extends React.Component {
                         'Jenny Odell [@odelllll]',
                         'Hannah Markley [@dr.markley2u]',
                         'Marshall McLuhan [@message_man_mcluhan]',
-                        'Neil Postman [@neil.keep.me.posted.ma]n'
+                        'Neil Postman [@neil.keep.me.posted.man]'
                     ]).map((handle, id) => { 
                         return (
                         {

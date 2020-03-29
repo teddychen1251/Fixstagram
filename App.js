@@ -19,7 +19,7 @@ import Feed from './src/components/Feed';
 import TimeTicker from './src/components/TimeTicker'
 
 const feed = React.createRef();
-
+console.disableYellowBox = true;
 const App: () => React$Node = () => {
   
   return (
@@ -36,7 +36,7 @@ const App: () => React$Node = () => {
         centerComponent={
           <>
             <TimeTicker />
-            <Text style={styles.headerText}>FixTheGram</Text>
+            <Text style={styles.headerText}>ethaGram</Text>
           </>
         }
         rightComponent={
